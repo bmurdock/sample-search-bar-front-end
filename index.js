@@ -9,11 +9,16 @@ const search = (e) =>
     // we want to prevent whatever it would normally do
     e.preventDefault();
 
+    // set up the route to your api
     const baseRoute = `https://pokeapi.co/api/v2/pokemon`;
 
+    // get the thing they are searching for
     const term = query.value;
+    // append that to the route you will request
     const route = `${baseRoute}/${term}`;
     
+
+    // use fetch to request that route
     fetch(route)
     .then((response) =>
     {
